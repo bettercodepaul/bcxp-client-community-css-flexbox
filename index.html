@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+   <!-- 
+      Der Code kann eingeklappt werden, um die Lesbarkeit zu erhöhen.
+      <head>, <header> und <footer> können eingeklappt werden.
+    -->
+    <title>CSS Flexbox</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- 
+      Default Style vom Browser deaktivieren. 
+      Gleiches Aussehen auf allen Betriebssystemen und Browsern herstellen.
+    -->
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" />
+    <!--
+      Icons
+    -->
+    <script src="https://kit.fontawesome.com/9c6c7b49b7.js" crossorigin="anonymous"></script>
+    <!-- 
+      Styling der Aufgabenstellung
+     -->
+    <link rel="stylesheet" href="assets/aufgabenstellung.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>BCxP Client Community - CSS Flexbox</h1>
+
+        <p>
+          Lernziele dieser Hands-On Session:
+          <ol>
+            <li>Die Lernenden kennen die Flexbox Attribute.</li>
+            <li>Die Lernenden verstehen das Flexbox Konzept.</li>
+            <li>Die Lernenden können ein Layout mit Flexbox umsetzen.</li>
+          </ol>
+        </p>
+      </section>
+
+      <section>
+        <h2>Agenda</h2>
+        <ol>
+          <li>Theorie: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox Konzept und Attribute</a></li>
+          <li>Coding: Aufgabenstellung bearbeiten</li>
+          <li>Feedback</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Aufgabenstellung</h2>
+        <p>
+          Paul ist ein junger Software-Entwickler bei BCxP und bittet euch bei seiner Userstory zum Thema "Layouting mit Flexbox" um Hilfe.<br/>
+          Bei der Umsetzung der Anforderungen ist etwas schief gelaufen. Bitte helft Paul.
+        <p>
+        
+        <h3>Userstory-0815: Layout für die Anwendung</h3>
+        <p>
+          <strong>Als Benutzer des Clients möchte ich ein vertrautes Layout-Konzept nutzen, um mich schnell zurecht zu finden.</strong>
+        </p>
+        <p>
+          Die Client-Anwendung besteht aus einem Header, einem Navigationsmenu an der linken Seite und einem Content-Bereich.
+          <br/>
+          Der Content-Bereich enthält eine Bildergallerie mit Kacheln.
+        </p>
+
+        <p>
+          <strong>Akzeptanzkriterien:</strong>
+        </p>
+        <ol>
+          <li>Es wird nur Flexbox genutzt.</li>
+          <li>Die HTML-Snippets aus der Vorgehensbeschreibung werden verwendet.</li>
+          <li>Das Layout entspricht dem folgenden Mockup:<br/>
+            <img src="https://bettercodepaul.github.io/bcxp-client-community-css-flexbox/assets/CSS-Flexbox.png" />
+          </li>
+        </ol>
+
+        <p>
+          <strong>Vorgehen:</strong>
+          <ol>
+            <li>Stelle den Header fertig.</li>
+            <li>Konfiguriere den <code>sidebar-navigation-layout</code>-Container, sodass die Navigationsleiste und der Content-Bereich sichtbar sind.<br/>
+            Lösche die Hintergrundfarben, sobald das grobe Layout steht.</li>
+            <li>Kopiere den Inhalt für die Navigationsleiste in das <code>nav</code>-Element:<br/>
+              <pre>&lt;div&nbsp;class=&quot;sidebar&#45;navigation&#45;list&quot;&gt;
+&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#kitten&quot;&nbsp;class=&quot;menu&#45;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i&nbsp;class=&quot;fa&#45;solid&nbsp;fa&#45;home&quot;&gt;&lt;/i&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;Home&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#kitten&quot;&nbsp;class=&quot;menu&#45;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i&nbsp;class=&quot;fa&#45;solid&nbsp;fa&#45;cat&quot;&gt;&lt;/i&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;Kätzchen&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#kitten&#45;overview&quot;&nbsp;class=&quot;menu&#45;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i&nbsp;class=&quot;fa&#45;solid&nbsp;fa&#45;table&#45;cells&#45;large&quot;&gt;&lt;/i&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;Übersicht&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#kitten&#45;overview&quot;&nbsp;class=&quot;menu&#45;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i&nbsp;class=&quot;fa&#45;solid&nbsp;fa&#45;table&#45;cells&quot;&gt;&lt;/i&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;Details&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;sidebar&#45;navigation&#45;list&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;seperator&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#collapse&#45;menu&quot;&nbsp;class=&quot;menu&#45;item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i&nbsp;class=&quot;fa&#45;solid&nbsp;fa&#45;angles&#45;left&quot;&gt;&lt;/i&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;Einklappen&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;</pre>
+            </li>
+            <li>Stelle die Navigationsleiste fertig.</li>
+            <li>Kopiere den Inhalt für den Content-Bereich in das <code>main</code>-Element:<br/>
+              <pre>&nbsp;&lt;section&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Kätzchen&nbsp;&#45;&nbsp;Übersicht&lt;/h2&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Die&nbsp;süßesten&nbsp;Kätzchen&nbsp;der&nbsp;Welt!
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&lt;/section&gt;
+
+&nbsp;&lt;section&nbsp;class=&quot;grid&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tile&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;http://placekitten.com/600/600?image=1&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tile&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;http://placekitten.com/600/600?image=2&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tile&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;http://placekitten.com/600/600?image=3&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tile&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;http://placekitten.com/600/600?image=4&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tile&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;http://placekitten.com/600/600?image=5&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tile&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;http://placekitten.com/600/600?image=6&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tile&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;src=&quot;http://placekitten.com/600/600?image=7&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&lt;/section&gt;</pre>
+              </li>
+              <li>Stelle den Content-Bereich fertig.</li>
+          </ol>
+        </p>
+      </section>
+
+      <section>
+        <h2>Los geht´s</h2>
+        <p>
+          Öffne <a href="#">Code Pen</a> (Online Editor) mit dem Code.
+        </p>
+        <p>
+          Für die Übung sind die Dateien <i>uebung.css</i> und <i>uebung.html</i> wichtig. <br/>
+          Beides wird im Code Pen direkt angezeigt.
+        </p>
+        <p>
+          In der Vorschau ist die Übung mit Pauls aktuellen Stand zu sehen.<br/>
+          Änderungen an der CSS-Datei sind sofort in der Vorschau sichtbar.
+        </p>
+        <p>
+          Beim Speichern wird automatisch eine eigene Version des Projektes (Fork) angelegt.
+        </p>
+        <p>
+          Eine Lösung findet du <a href="#">hier</a>.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

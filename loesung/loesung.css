@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.sidebar-navigation-layout {
+  display: flex;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.menu-item span {
+  flex: 1 0 80%;
+}
+
+main {
+  flex: 1 1 100%;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+
+.tile {
+  flex: 0 1 24%;
+}
