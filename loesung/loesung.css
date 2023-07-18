@@ -3,10 +3,7 @@ body {
   flex-direction: column;
 }
 
-.header-item {
-  display: flex;
-  align-items: center;
-}
+/* Header */
 
 header {
   display: flex;
@@ -20,9 +17,18 @@ header {
   flex-grow: 1;
 }
 
+.header-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigationsleiste und Content-Bereich */
+
 .sidebar-navigation-layout {
   display: flex;
 }
+
+/* Navigationsleiste */
 
 nav {
   display: flex;
@@ -38,6 +44,8 @@ nav {
 .menu-item span {
   flex: 1 0 80%;
 }
+
+/* Content-Breich */
 
 main {
   flex: 1 1 100%;
